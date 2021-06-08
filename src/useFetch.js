@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 const useFetch = (url) => {
 
@@ -13,14 +14,15 @@ const useFetch = (url) => {
     setTimeout(() => {
       fetch(url)
         .then(res => {
-          //check the okay property
-          if (!res.ok) { // if response is not okay, throw new error
-            throw Error('could not get the stats. Please try again later');
+          //if response is not in the 200s throw error other return json
+          if (res.status >= 200 && res.status <= 299) {
+            return res.json();
+          } else {
+            throw Error(res.statusText);
           }
-          return res.json()
         })
         .then((data) => {
-         // console.log(data)
+         //console.log(data)
           setIsLoading(false);
           setStats(data.match);
           setError(null);
@@ -42,3 +44,11 @@ const useFetch = (url) => {
 }
 
 export default useFetch;
+
+//Prop-Types
+useFetch.propTypes = {
+  stats: PropTypes.object,
+  isLoading: PropTypes.bool,
+  error: PropTypes.bool,
+  url: PropTypes.string
+};

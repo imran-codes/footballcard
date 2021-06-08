@@ -1,5 +1,6 @@
 import useFetch from '../useFetch';
 import FootyList from "./FootyList";
+import PropTypes from 'prop-types';
 
 
 
@@ -18,4 +19,10 @@ const FootyCard = () => {
 }
 
 export default FootyCard;
+
+//Prop-Types
+FootyCard.propTypes = {
+  stats: PropTypes.object,
+  title: PropTypes.string
+};
 
