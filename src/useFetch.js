@@ -10,9 +10,11 @@ const useFetch = (url) => {
 
   // run code on every render
   useEffect(() => {
+    // associate with useFetch
+    const abortCont = new AbortController();
     // setTimeout to show loading message for a second - This is to simulate if we was fetching stats from an external api
     setTimeout(() => {
-      fetch(url)
+      fetch(url, { signal: abortCont.signal })
         .then(res => {
           //if response is not in the 200s throw error other return json
           if (res.status >= 200 && res.status <= 299) {
@@ -28,11 +30,20 @@ const useFetch = (url) => {
           setError(null);
         })
         .catch(err => {
-          // Catches network error automatically
-          setIsLoading(false);
-          setError(err.message);
+          //if abort error then dont update the state
+          if (err.name === "AbortError") {
+            console.log("fetch aborted");
+          } else {
+            // Catches network error automatically
+            setIsLoading(false);
+            setError(err.message);
+          }
         })
     }, 1000);
+   //stop the fetch in the background as we dont want to update the state - ABORT CONTROLLER
+    //when component that uses the useFetch hook unmounts fire cleanup
+    return () => abortCont.abort();
+
     //run once on page load and then when url dependency changes
   }, [url])
 
