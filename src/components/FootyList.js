@@ -1,4 +1,4 @@
-import { Container, ScoreBanner, Overlay, Content, Wrap, Title, Scores, Teams, TeamName, GeneralTab, Last5 } from "../styles";
+import { Container, ScoreBanner, Overlay, Content, Wrap, Title, Scores, Teams, TeamName, GeneralTab, Last5 } from "../Styles";
 import Statistics from "./Statistics"
 import PropTypes from 'prop-types';
 

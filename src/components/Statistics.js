@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { DisplayStats, GeneralTitle, StatButtonsDiv, StatButtons, StatisticsContainer, StateContainer, StatisticsSeperator, FourStats, Labels, Loaders, Loader1, Loader2, LoaderHomeShots, LoaderAwayShots, LoaderHomePossession, LoaderAwayPossession, LoaderHomeTarget, LoaderAwayTarget, LoaderHomeCorners, LoaderAwayCorners, Cards, HomeCards, AwayCards } from "../styles";
-import Yellowcard from "../yellowcard.svg";
-import Redcard from "../redcard.svg";
+import { DisplayStats, GeneralTitle, StatButtonsDiv, StatButtons, StatisticsContainer, StateContainer, StatisticsSeperator, FourStats, Labels, Loaders, Loader1, Loader2, LoaderHomeShots, LoaderAwayShots, LoaderHomePossession, LoaderAwayPossession, LoaderHomeTarget, LoaderAwayTarget, LoaderHomeCorners, LoaderAwayCorners, Cards, HomeCards, AwayCards } from "../Styles";
+import YellowCard from "../YellowCard.svg";
+import RedCard from "../RedCard.svg";
 import PropTypes from 'prop-types';
 
 
@@ -45,12 +45,12 @@ const Statistics = ({stats}) => {
   </StatisticsSeperator>
     <Cards>
       <HomeCards>
-      <img style={{ marginRight: "5px" }} src={Yellowcard} alt="yellowcard" /> <span>{stats.liveData.lineups.home.stats[1].value}</span>
-      <img style={{ marginLeft: "5px" }} src={Redcard} alt="redcard" /> <span style={{ marginLeft: "5px" }}>0</span>
+      <img style={{ marginRight: "5px" }} src={YellowCard} alt="YellowCard" /> <span>{stats.liveData.lineups.home.stats[1].value}</span>
+      <img style={{ marginLeft: "5px" }} src={RedCard} alt="RedCard" /> <span style={{ marginLeft: "5px" }}>0</span>
       </HomeCards>
       <AwayCards>
-      <img style={{ marginRight: "5px" }} src={Redcard} alt="redcard" /> <span style={{ marginRight: "5px" }}>0</span>
-      <img style={{ marginRight: "5px" }} src={Yellowcard} alt="yellowcard" /> <span>{stats.liveData.lineups.away.stats[2].value}</span>
+      <img style={{ marginRight: "5px" }} src={RedCard} alt="RedCard" /> <span style={{ marginRight: "5px" }}>0</span>
+      <img style={{ marginRight: "5px" }} src={YellowCard} alt="YellowCard" /> <span>{stats.liveData.lineups.away.stats[2].value}</span>
       </AwayCards>
     </Cards>
 </StatisticsContainer>
@@ -94,12 +94,12 @@ const FirstHalfStats =
 </StatisticsSeperator>
 <Cards>
   <HomeCards>
-  <img style={{ marginRight: "5px" }} src={Yellowcard} alt="yellowcard" /> <span>{stats.liveData.lineups.home.stats[1].fh}</span>
-  <img style={{ marginLeft: "5px" }} src={Redcard} alt="redcard" /> <span style={{ marginLeft: "5px" }}>0</span>
+  <img style={{ marginRight: "5px" }} src={YellowCard} alt="YellowCard" /> <span>{stats.liveData.lineups.home.stats[1].fh}</span>
+  <img style={{ marginLeft: "5px" }} src={RedCard} alt="RedCard" /> <span style={{ marginLeft: "5px" }}>0</span>
   </HomeCards>
   <AwayCards>
-  <img style={{ marginRight: "5px" }} src={Redcard} alt="redcard" /> <span style={{ marginRight: "5px" }}>0</span>
-  <img style={{ marginRight: "5px" }} src={Yellowcard} alt="yellowcard" /> <span>{stats.liveData.lineups.away.stats[2].fh}</span>
+  <img style={{ marginRight: "5px" }} src={RedCard} alt="RedCard" /> <span style={{ marginRight: "5px" }}>0</span>
+  <img style={{ marginRight: "5px" }} src={YellowCard} alt="YellowCard" /> <span>{stats.liveData.lineups.away.stats[2].fh}</span>
   </AwayCards>
 </Cards>
 </StatisticsContainer>
@@ -144,12 +144,12 @@ const SecondHalfStats =
 </StatisticsSeperator>
 <Cards>
     <HomeCards>
-    <img style={{ marginRight: "5px" }} src={Yellowcard} alt="yellowcard" /> <span>{stats.liveData.lineups.home.stats[1].sh}</span>
-    <img style={{ marginLeft: "5px" }} src={Redcard} alt="redcard" /> <span style={{ marginLeft: "5px" }}>0</span>
+    <img style={{ marginRight: "5px" }} src={YellowCard} alt="YellowCard" /> <span>{stats.liveData.lineups.home.stats[1].sh}</span>
+    <img style={{ marginLeft: "5px" }} src={RedCard} alt="RedCard" /> <span style={{ marginLeft: "5px" }}>0</span>
     </HomeCards>
     <AwayCards>
-    <img style={{ marginRight: "5px" }} src={Redcard} alt="redcard" /> <span style={{ marginRight: "5px" }}>0</span>
-    <img style={{ marginRight: "5px" }} src={Yellowcard} alt="yellowcard" /> <span>{stats.liveData.lineups.away.stats[2].sh}</span>
+    <img style={{ marginRight: "5px" }} src={RedCard} alt="RedCard" /> <span style={{ marginRight: "5px" }}>0</span>
+    <img style={{ marginRight: "5px" }} src={YellowCard} alt="YellowCard" /> <span>{stats.liveData.lineups.away.stats[2].sh}</span>
     </AwayCards>
   </Cards>
 </StatisticsContainer>
@@ -158,7 +158,7 @@ const SecondHalfStats =
 
    
   
-  return ( 
+  return (  
 <DisplayStats>
               <GeneralTitle>General</GeneralTitle>
               <StatButtonsDiv>
