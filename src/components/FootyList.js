@@ -8,7 +8,7 @@ const FootyList = ({stats, title}) => {
 
 
   return (
-                <div>
+                
                   
                     <Container>
                       {/* SCORE BANNER */}
@@ -50,7 +50,7 @@ const FootyList = ({stats, title}) => {
 
                     </Container>
                     
-                </div>
+              
   );
 }
 
